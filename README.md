@@ -60,7 +60,6 @@ CUDA_VISIBLE_DEVICES=0 python eval.py  --input_size=1280 --nms_thresh=0.1 --cls_
 ---
 
 ## 최종 결과
-- [실험 정리/성능 표](https://docs.google.com/spreadsheets/d/1Iq5JlMM95Xp5f6kLSZPLImi_9QcS9usRuMH5vlKIZU8/edit?usp=sharing)
 
 | Framework   | Dataset     | Hmean    |   backbone  | input size | training scale | cls thresh | nms thresh  | iter    | weights |
 |:--------:   | :----:   |  :--------: |  :------:  |  :----------:  |  :------:  |  :------:   |:-----:  |:-----:  | :-----:  |
