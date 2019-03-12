@@ -68,6 +68,12 @@ CUDA_VISIBLE_DEVICES=0 python eval.py  --input_size=1280 --nms_thresh=0.1 --cls_
 | Pytorch | ICDAR2013  |  0.8298   | se-resnet50 |   multi    |  Multi scale   |    0.5     |   0.35      | Synth(35k) + IC13+MLT(7k) | [link](https://drive.google.com/open?id=1pzwDnC3C2nXtwYe0A_tkMlWwf6BJAve0) |
 | Pytorch | ICDAR2015  |  0.8065   | se-resnet50 |  1280x1280 |  Multi scale   |    0.4     |   0.20      | Synth(35k) + IC15(4k) | [link](https://drive.google.com/open?id=1mDNS8RfFExjXTg-7cmU725n4P_Ma2If4) |
 
+## Good case
+- Quad box에도 잘 대응을 하며, 다양한 크기의 box들도 잘찾아낸다. 
+- Red : Prediction  /  Green : GT  /  Yellow : Don't Care
+  - ICDAR2013
+  - ICDAR2015
+  
 ## Bad case
 - vertical box에 대해 약하다..!
 - GT box와 비교했을 때, text 영역을 잘감싸는 fitting이 부족하다.
