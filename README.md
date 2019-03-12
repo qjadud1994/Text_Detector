@@ -10,6 +10,8 @@ An example of text recognition is typically the [CRNN](https://github.com/qjadud
 
 Combining this text detector with a [CRNN](https://github.com/qjadud1994/CRNN-Keras) makes it possible to create an OCR engine that operates end-to-end.
 
+This text detector is implemented in two frameworks, pytorch and tensorflow, and multi scale training is only possible in pytorch implementations.
+
 ## How to use
 - single scale training
 ```
@@ -24,7 +26,7 @@ CUDA_VISIBLE_DEVICES=0,1 python train.py --dataset=ICDAR2013/MLT --batch_size=16
 CUDA_VISIBLE_DEVICES=0,1 python train.py --dataset=ICDAR2015 --batch_size=8 --input_size=960 --logdir=logs/single_step3/ --save_folder=weights/single_step3/  --num_workers=6 --resume=weights/single_step2/ckpt_10000.pth
 ```
 
-- multi scale training
+- multi scale training (only pytorch)
 ```
 #step1 : SynthText, MS(608x608 ~ 960x960)
 CUDA_VISIBLE_DEVICES=0,1 python train.py --dataset=SynthText --batch_size=12 --multi_scale=True --logdir=logs/multi_step1/ --save_folder=weights/multi_step1/ --num_workers=6
