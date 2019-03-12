@@ -3,12 +3,12 @@
 OCR consists of text localization + text recognition.
 (text localization finds where the characters are, and text recognition reads the letters.)
 
-This text detector acts as text localization and uses the structure of RetinaNet and applies the techniques used in textboxes++.
+This text detector acts as text localization and uses the structure of [RetinaNet](https://arxiv.org/pdf/1708.02002.pdf) and applies the techniques used in [textboxes++](https://arxiv.org/pdf/1801.02765.pdf).
 
 After performing localization, each text area is cropped and used as input for text recognition.
-An example of text recognition is typically the CRNN.
+An example of text recognition is typically the [CRNN](https://github.com/qjadud1994/CRNN-Keras).
 
-Combining this text detector with a CRNN makes it possible to create an OCR engine that operates end-to-end.
+Combining this text detector with a [CRNN](https://github.com/qjadud1994/CRNN-Keras) makes it possible to create an OCR engine that operates end-to-end.
 
 ## How to use
 - single scale training
@@ -44,7 +44,7 @@ CUDA_VISIBLE_DEVICES=0 python eval.py  --input_size=1280 --nms_thresh=0.1 --cls_
 
 ---
 
-## TextBoxes++
+## [TextBoxes++](https://arxiv.org/pdf/1801.02765.pdf)
 - SSD structure is used, and vertical offset is added to make bbox proposal.
 - The structure is the same as TextBoxes, but the offset for the QuadBox has been added.
 - 4d-anchor box(xywh) offset -> (4+8)-d anchor box(xywh + x0y0x1y1x2y2x3y3) offset
@@ -54,7 +54,7 @@ CUDA_VISIBLE_DEVICES=0 python eval.py  --input_size=1280 --nms_thresh=0.1 --cls_
 ![screensh](https://github.com/qjadud1994/OCR_Detector/blob/master/photos/textboxes_1.PNG)
 
 
-## RetinaNet
+## [RetinaNet](https://arxiv.org/pdf/1708.02002.pdf)
 - Simple one-stage object detection and good performance
 - FPN (Feature Pyramid Network) allows various levels of features to be used.
 - output : 1-d score + 4d-anchor box offset
