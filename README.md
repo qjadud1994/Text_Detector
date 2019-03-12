@@ -1,6 +1,6 @@
 # Text Detector for OCR
 
-OCR consists of text localization + text recognition.
+OCR(Optical Character Recognition) consists of text localization + text recognition.
 (text localization finds where the characters are, and text recognition reads the letters.)
 
 This text detector acts as text localization and uses the structure of [RetinaNet](https://arxiv.org/pdf/1708.02002.pdf) and applies the techniques used in [textboxes++](https://arxiv.org/pdf/1801.02765.pdf).
