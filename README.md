@@ -62,6 +62,7 @@ CUDA_VISIBLE_DEVICES=0 python eval.py  --input_size=1280 --nms_thresh=0.1 --cls_
 - ImageNet pre-trained weight initialize required! -> loss explode, just can not learn!
 - batch norm freeze is also required! If you do not freeze, your learning will not work.
 - Freeze BN or Group Norm works well. However, GN was slow (group = 32) and there was no significant performance difference with freeze BN.
+
 ![screensh](https://github.com/qjadud1994/OCR_Detector/blob/master/photos/RetinaNet.png)
 
 ## Encode
@@ -96,6 +97,7 @@ CUDA_VISIBLE_DEVICES=0 python eval.py  --input_size=1280 --nms_thresh=0.1 --cls_
 - It is weak in vertical box and long text ..!
 - Compared to the GT box, there is not enough fitting to wrap the text area well.
 - It is vulnerable to ambiguous text or first-seen text.
+- Red : Prediction  /  Green : GT  /  Yellow : Don't Care
   - ICDAR2013
   
   ![screensh](https://github.com/qjadud1994/OCR_Detector/blob/master/photos/bad_ic13.PNG)
