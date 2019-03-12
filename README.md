@@ -37,9 +37,14 @@ CUDA_VISIBLE_DEVICES=0 python eval.py  --input_size=1280 --nms_thresh=0.1 --cls_
 ---
 
 ## TextBoxes++ 특징
+- SSD 구조를 사용하며, vertical offset을 추가하여 bbox proposal을 한다.
 - TextBoxes와 구조는 같지만, Quad Box를 위한 offset이 추가되었다.
 - 4d-anchor box(xywh) offset -> (4+8)-d anchor box(xywh + x0y0x1y1x2y2x3y3) offset
 - last conv : 3x5 -> quad box에 최적화된 receptive field를 갖게 하기 위함
+
+![screensh](https://github.com/qjadud1994/OCR_Detector/blob/master/photos/textboxes_2.PNG)
+![screensh](https://github.com/qjadud1994/OCR_Detector/blob/master/photos/textboxes_1.PNG)
+
 
 ## RetinaNet 특징
 - one-stage object detection 중에서 간단하며 성능이 좋은 모델
@@ -49,6 +54,7 @@ CUDA_VISIBLE_DEVICES=0 python eval.py  --input_size=1280 --nms_thresh=0.1 --cls_
 - ImageNet pre-trained weight initialize는 필수! -> loss가 폭발, 그냥 학습이 안된다..!
 - batch norm freeze도 필수! -> freeze 시키지않으면 성능이 반 이상 하락한다. 또한 box offset은 어느정도 찾긴 하지만, classification이 엉망이다.
 - freeze BN 또는 Group Norm을 사용하면 잘동작한다. 하지만 GN는 학습 속도 (group=32)가 느리며, freeze BN과 큰 성능차이가 없었다.
+![screensh](https://github.com/qjadud1994/OCR_Detector/blob/master/photos/RetinaNet.PNG)
 
 ## Encode
 1. 각 grid마다 anchor box들을 정의한다.
@@ -72,13 +78,20 @@ CUDA_VISIBLE_DEVICES=0 python eval.py  --input_size=1280 --nms_thresh=0.1 --cls_
 - Quad box에도 잘 대응을 하며, 다양한 크기의 box들도 잘찾아낸다. 
 - Red : Prediction  /  Green : GT  /  Yellow : Don't Care
   - ICDAR2013
+  ![screensh](https://github.com/qjadud1994/OCR_Detector/blob/master/photos/good_ic13.PNG)
   - ICDAR2015
+  ![screensh](https://github.com/qjadud1994/OCR_Detector/blob/master/photos/good_ic15.PNG)
   
 ## Bad case
 - vertical box에 대해 약하다..!
 - GT box와 비교했을 때, text 영역을 잘감싸는 fitting이 부족하다.
 - 길이가 긴 Text에 대한 처리 능력이 부족하다.
 - 애매한 또는 처음 보는 text에 대한 대처 능력이 부족하다.
+  - ICDAR2013
+  ![screensh](https://github.com/qjadud1994/OCR_Detector/blob/master/photos/bad_ic13.PNG)
+  - ICDAR2015
+  ![screensh](https://github.com/qjadud1994/OCR_Detector/blob/master/photos/bad_ic15.PNG)
+
 
 ---
 
