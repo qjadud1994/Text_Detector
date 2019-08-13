@@ -27,7 +27,7 @@ for k in d.keys():
     dd[k] = d[k]
 
 print('Saving RetinaNet..')
-net = RetinaNet(2)
+net = RetinaNet(1)
 
 for m in net.modules():
     if isinstance(m, nn.Conv2d):
@@ -42,5 +42,5 @@ pi = 0.01
 init.constant_(net.cls_head[-1].bias, -math.log((1-pi)/pi))
 
 net.fpn.load_state_dict(dd)
-torch.save(net.state_dict(), 'weights/retinanet_se50_OHEM.pth')
+torch.save(net.state_dict(), 'weights/retinanet_se50.pth')
 print('Done!')
