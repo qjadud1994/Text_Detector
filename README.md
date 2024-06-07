@@ -80,10 +80,10 @@ CUDA_VISIBLE_DEVICES=0 python eval.py  --input_size=1280 --nms_thresh=0.1 --cls_
 
 | Framework   | Dataset     | Hmean    |   backbone  | input size | training scale | cls thresh | nms thresh  | iter    | weights |
 |:--------:   | :----:   |  :--------: |  :------:  |  :----------:  |  :------:  |  :------:   |:-----:  |:-----:  | :-----:  |
-| Tensorflow | ICDAR2013  |  0.8107   | se-resnet50 |   768x768    |  960x960   |    0.3     |   0.1      | Synth(62k) + IC15(17k) | [link](https://drive.google.com/open?id=1uZtCjyZ4vx9RpXaEuU2UEJIkxY8Kddfp) |
-| Tensorflow | ICDAR2015  |  0.7916   | se-resnet50 |  1280x1280 |  960x960   |    0.3     |   0.1      | Synth(62k) + IC15(17k) | [link](https://drive.google.com/open?id=1uZtCjyZ4vx9RpXaEuU2UEJIkxY8Kddfp) |
-| Pytorch | ICDAR2013  |  0.8298   | se-resnet50 |   multi    |  Multi scale   |    0.5     |   0.35      | Synth(35k) + IC13+MLT(7k) | [link](https://drive.google.com/open?id=1pzwDnC3C2nXtwYe0A_tkMlWwf6BJAve0) |
-| Pytorch | ICDAR2015  |  0.8065   | se-resnet50 |  1280x1280 |  Multi scale   |    0.4     |   0.20      | Synth(35k) + IC15(4k) | [link](https://drive.google.com/open?id=1mDNS8RfFExjXTg-7cmU725n4P_Ma2If4) |
+| Tensorflow | ICDAR2013  |  0.8107   | se-resnet50 |   768x768    |  960x960   |    0.3     |   0.1      | Synth(62k) + IC15(17k) | [link](https://github.com/qjadud1994/Text_Detector/releases/download/asset/Tensorflow_ICDAR.zip) |
+| Tensorflow | ICDAR2015  |  0.7916   | se-resnet50 |  1280x1280 |  960x960   |    0.3     |   0.1      | Synth(62k) + IC15(17k) | [link](https://github.com/qjadud1994/Text_Detector/releases/download/asset/Tensorflow_ICDAR.zip) |
+| Pytorch | ICDAR2013  |  0.8298   | se-resnet50 |   multi    |  Multi scale   |    0.5     |   0.35      | Synth(35k) + IC13+MLT(7k) | [link](https://github.com/qjadud1994/Text_Detector/releases/download/asset/ICDAR2013_TextBoxes.pth) |
+| Pytorch | ICDAR2015  |  0.8065   | se-resnet50 |  1280x1280 |  Multi scale   |    0.4     |   0.20      | Synth(35k) + IC15(4k) | [link](https://github.com/qjadud1994/Text_Detector/releases/download/asset/ICDAR2015_TextBoxes.pth) |
 
 ## Good case
 - It responds well to the quad box and finds boxes of various sizes.
